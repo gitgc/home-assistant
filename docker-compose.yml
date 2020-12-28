@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  home-assistant:
+    container_name: home-assistant
+    image: homeassistant/raspberrypi4-homeassistant:stable
+    volumes:
+      - ./config:/config
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=America/Los_Angeles
