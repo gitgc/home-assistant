@@ -11,3 +11,13 @@ services:
     privileged: true
     environment:
       - TZ=America/Los_Angeles
+  
+  mqtt:
+    container_name: mqtt
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+#    volumes:
+#      - ./conf:/mosquitto/conf
+#      - ./data:/mosquitto/data
+#      - ./log:/mosquitto/log
