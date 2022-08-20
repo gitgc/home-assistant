@@ -1,0 +1,35 @@
+(logs_external_https) {
+  log {
+    output file /var/log/caddy/caddy-https-external.log {
+      roll_size 1MiB
+      roll_keep 5
+      roll_keep_for 168h
+    }
+    format console
+  }
+}
+(https_header) {
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubdomains"
+    X-XSS-Protection "1; mode=block"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "SAMEORIGIN"
+    Referrer-Policy "same-origin"
+  }
+}
+
+home.coia.me {
+  #import https_header
+  rewrite /cockpit /cockpit/
+  reverse_proxy /cockpit/* https://host.docker.internal:9090 {
+    transport http {
+      tls_insecure_skip_verify
+    }
+  }
+
+  reverse_proxy home.coia.me:8123
+  import logs_external_https
+  encode gzip
+  tls {
+    dns digitalocean {env.DO_AUTH_TOKEN}
+}

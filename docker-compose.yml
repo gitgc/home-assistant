@@ -1,23 +1,35 @@
-version: '3'
-
 services:
   home-assistant:
     container_name: home-assistant
-    image: homeassistant/raspberrypi3-homeassistant:stable
+    image: homeassistant/raspberrypi4-homeassistant:stable
     volumes:
-      - ./config:/config
+      - ./home_assistant_config:/config
     restart: unless-stopped
     network_mode: host
     privileged: true
     environment:
       - TZ=America/Los_Angeles
+      - SPOTIFY_CLIENT_ID
+      - SPOTIFY_CLIENT_SECRET
+      - NEST_CLIENT_ID
+      - NEST_CLIENT_SECRET
+      - NEST_PROJECT_ID
+      - NEST_SUBSCRIBER_ID
   
-  mqtt:
-    container_name: mqtt
-    image: eclipse-mosquitto:latest
+  caddy:
+    build: .
+    restart: unless-stopped
     ports:
-      - "1883:1883"
-#    volumes:
-#      - ./conf:/mosquitto/conf
-#      - ./data:/mosquitto/data
-#      - ./log:/mosquitto/log
+      - "80:80"
+      - "443:443"
+    environment:
+      - DO_AUTH_TOKEN
+    volumes:
+      - "./Caddyfile:/etc/caddy/Caddyfile"
+      - "./site/:/var/www/html/"
+      - "./caddy_data/:/data/"
+      - "./caddy_config/:/config/"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - home-assistant
