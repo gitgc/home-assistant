@@ -15,7 +15,13 @@ services:
       - NEST_CLIENT_SECRET
       - NEST_PROJECT_ID
       - NEST_SUBSCRIBER_ID
-  
+    healthcheck:
+      test: ["CMD", "curl", "--fail", http://localhost:8123]
+      interval: 1m30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
   caddy:
     build: .
     restart: unless-stopped
@@ -31,5 +37,11 @@ services:
       - "./caddy_config/:/config/"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "http://localhost/caddy-health-check" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
     depends_on:
       - home-assistant
