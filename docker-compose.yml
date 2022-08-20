@@ -24,6 +24,7 @@ services:
 
   caddy:
     build: ./caddy
+    container_name: home-assistant-caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -38,7 +39,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
-      test: [ "CMD", "wget", "--spider", "http://localhost/caddy-health-check" ]
+      test: [ "CMD", "wget", "--spider", "https://home.coia.me/caddy-health-check" ]
       interval: 30s
       timeout: 10s
       retries: 5
