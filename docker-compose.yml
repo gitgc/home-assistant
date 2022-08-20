@@ -3,7 +3,7 @@ services:
     container_name: home-assistant
     image: homeassistant/raspberrypi4-homeassistant:stable
     volumes:
-      - ./home_assistant_config:/config
+      - ./config:/config
     restart: unless-stopped
     network_mode: host
     privileged: true
@@ -23,7 +23,7 @@ services:
       start_period: 60s
 
   caddy:
-    build: .
+    build: ./caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -32,9 +32,9 @@ services:
       - DO_AUTH_TOKEN
     volumes:
       - "./Caddyfile:/etc/caddy/Caddyfile"
-      - "./site/:/var/www/html/"
-      - "./caddy_data/:/data/"
-      - "./caddy_config/:/config/"
+      - "./caddy/site/:/var/www/html/"
+      - "./caddy/caddy_data/:/data/"
+      - "./caddy/caddy_config/:/config/"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
