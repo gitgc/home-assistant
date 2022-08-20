@@ -24,6 +24,7 @@ services:
 
   caddy:
     build: ./caddy
+    container_name: home-assistant-caddy
     restart: unless-stopped
     ports:
       - "80:80"
