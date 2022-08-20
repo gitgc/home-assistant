@@ -1,0 +1,6 @@
+- platform: climate_group
+  name: 'Heating'
+  temperature_unit: F  # default to celsius, 'C' or 'F'
+  entities:
+  - climate.den_thermostat
+  - climate.hallway_thermostat

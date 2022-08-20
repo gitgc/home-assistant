@@ -1,0 +1,5 @@
+- platform: group
+  name: carrie_gio
+  services:
+    - service: mobile_app_carries_iphone
+    - service: mobile_app_giophone

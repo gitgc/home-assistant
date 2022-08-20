@@ -1,0 +1,90 @@
+- alias: Frigate mobile notifications
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: frigate/events
+    payload: new
+    value_template: '{{ value_json.type }}'
+  condition: []
+  action:
+  - service: notify.carrie_gio
+    data_template:
+      message: A {{trigger.payload_json["after"]["label"]}} was detected on {{trigger.payload_json["after"]["camera"]}}
+      data:
+        image: https://5tup05ato1u047sgwytbxn2m36omtn3u.ui.nabu.casa/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
+        tag: '{{trigger.payload_json["after"]["id"]}}'
+        when: '{{trigger.payload_json["after"]["start_time"]|int}}'
+        entity_id: camera.{{trigger.payload_json["after"]["camera"]|replace('-', '_')}}
+  mode: single
+
+- alias: Kitchen doorbell press notifications
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 4bc3180bff566c2898d13453c8bc3cba
+    entity_id: binary_sensor.front_door_doorbell
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.carrie_gio
+    data_template:
+      message: Kitchen Door Bell is ringing
+      data:
+        image: https://nvr.coia.me/frigate/api/front-door/latest.jpg?h=600
+        tag: '{{trigger["id"]}}'
+        when: '{{trigger["to_state"]["last_changed"]}}'
+  mode: single
+
+- alias: car/person porch lights at night
+  description: ''
+  condition:
+    condition: or
+    conditions:
+    - condition: time
+      after: '20:30'
+    - condition: sun
+      before: sunrise
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity:
+      - binary_sensor.front_door_car_motion
+      - binary_sensor.front_door_person_motion
+      - binary_sensor.workshop_yard_car_motion
+      - binary_sensor.workshop_yard_person_motion
+      light_target:
+        entity_id: light.porch_lights
+      no_motion_wait: 6000
+
+- alias: Re-enable Frigate Notifications
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  - platform: time
+    at: '23:59:00'
+  - platform: time
+    at: 03:00:00
+  - platform: time
+    at: 09:00:00
+  - platform: time
+    at: '13:00:00'
+  - platform: time
+    at: '16:00:00'
+  condition: []
+  action:
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.front_door_person_notification_2
+  mode: single
+
+- alias: 'Set theme at startup'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: synthwave
