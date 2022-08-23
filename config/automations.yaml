@@ -110,3 +110,188 @@
       entity_id: scene.lights_on_kitchen
     metadata: {}
   mode: single
+- id: '1661224459838'
+  alias: Living Room Light Switch Button 1 - Lights On
+  description: ''
+  trigger:
+  - device_id: 0f6ad86fc58d296fca994fd893cdb950
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: 51030216-26d1-4db3-9f7c-65f8562783a1
+  - device_id: 1b71d18276e6d153e4222da407e6ba91
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: d9889503-27b5-46ee-860a-3d93b0462895
+  - device_id: 0e63805a40b605c9ae2068ba04d1ddb9
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: f3d7214a-c408-4488-ab7c-be90910b5c2b
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_living_room
+    metadata: {}
+  mode: single
+- id: '1661224545628'
+  alias: Living Room Light Switch Button 4 - Lights Off
+  description: ''
+  trigger:
+  - device_id: 0f6ad86fc58d296fca994fd893cdb950
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: a80f5b5a-2930-48de-a6a1-067dc7e3e1b2
+  - device_id: 1b71d18276e6d153e4222da407e6ba91
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: f3dcf760-7ecd-47f2-9172-060cd375a1c2
+  - device_id: 0e63805a40b605c9ae2068ba04d1ddb9
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: ac6ffb20-d2a5-44c8-a260-f11c64f109b8
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  mode: single
+- id: '1661224732948'
+  alias: Dining Room Light Switch Button 1 - Lights On
+  description: ''
+  trigger:
+  - device_id: da00fd7437f015ef175a1bb6670ce99c
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: c5a43c01-66ff-425c-b060-efe8f9e2b0eb
+  - device_id: f2fa82394f60db28af38a3d0f23f71c8
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: f372ecb9-ee39-4514-81ea-15f70b38cac5
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_dining_room
+    metadata: {}
+  mode: single
+- id: '1661224792408'
+  alias: Dining Room Light Switch Button 4 - Lights Off
+  description: ''
+  trigger:
+  - device_id: da00fd7437f015ef175a1bb6670ce99c
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: a6da19bd-57d7-4f1c-a97c-da1a264fd7ae
+  - device_id: f2fa82394f60db28af38a3d0f23f71c8
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: b939771f-8efd-4443-9061-6a649a0a31ff
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_dining_room
+    metadata: {}
+  mode: single
+- id: '1661224903229'
+  alias: Midnight Shutdown
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:59:00'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.good_night
+    metadata: {}
+  mode: single
+- id: '1661224993479'
+  alias: Kitchen Light Switch Button 1 - Lights On
+  description: ''
+  trigger:
+  - device_id: 2ee76cdaf6be02d157844b5c88b7c60e
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: 66b2821f-b7ff-441a-8c6c-a45dd5dfdb9b
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  mode: single
+- id: '1661225119449'
+  alias: Kitchen Light Switch Button 4 - Lights Off
+  description: ''
+  trigger:
+  - device_id: 2ee76cdaf6be02d157844b5c88b7c60e
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: 1ea41760-6840-4655-9963-89b9ddd65325
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_kitchen
+    metadata: {}
+  mode: single
+- id: '1661225156170'
+  alias: Hall Light Switch Button 1 - Lights On
+  description: ''
+  trigger:
+  - device_id: e6e5519dff32648ece893aa4a1820425
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: 8d62558a-b5e5-430b-9406-207098a23cd6
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_hall
+    metadata: {}
+  mode: single
+- id: '1661225274569'
+  alias: Hall Light Switch Button 4 - Lights Off
+  description: ''
+  trigger:
+  - device_id: e6e5519dff32648ece893aa4a1820425
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: c16445f9-d221-4636-ad24-3740d68f7b1d
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_hall
+    metadata: {}
+  mode: single
