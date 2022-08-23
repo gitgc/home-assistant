@@ -1497,97 +1497,48 @@
       supported_color_modes:
       - color_temp
       - hs
-      color_mode: hs
-      brightness: 128
-      hs_color:
-      - 222.598
-      - 10.788
-      rgb_color:
-      - 227
-      - 235
-      - 255
-      xy_color:
-      - 0.3
-      - 0.308
       entity_id:
       - light.living_room_ceiling_1
       - light.living_room_ceiling_2
-      - light.living_room_ceiling_3_2
-      friendly_name: Livingroom Ceiling Lights
+      - light.living_room_ceiling_3
       icon: mdi:lightbulb-group
+      friendly_name: Livingroom Ceiling Lights
       supported_features: 4
+      color_mode: hs
+      brightness: 122
+      hs_color:
+      - 223.574
+      - 9.608
+      rgb_color:
+      - 230
+      - 237
+      - 255
+      xy_color:
+      - 0.303
+      - 0.31
       state: 'on'
     light.livingroom_fireplace_lights:
       min_mireds: 153
       max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
+      effect_list: []
       supported_color_modes:
       - color_temp
       - hs
-      color_mode: hs
-      brightness: 204
-      hs_color:
-      - 26.114
-      - 17.36
-      rgb_color:
-      - 255
-      - 229
-      - 210
-      xy_color:
-      - 0.368
-      - 0.346
-      entity_id:
-      - light.living_room_fireplace_1
-      - light.livingroom_fireplace_2_2
-      friendly_name: Livingroom Fireplace Lights
       icon: mdi:lightbulb-group
+      friendly_name: Livingroom Fireplace Lights
       supported_features: 4
+      state: unavailable
+    switch.livingroom_fluxer:
+      friendly_name: Livingroom Fluxer
       state: 'on'
-    light.living_room_door:
-      min_mireds: 153
-      max_mireds: 500
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-      brightness: 63
-      color_temp: 200
-      is_hue_group: true
-      friendly_name: Living Room Door
-      supported_features: 43
+    switch.kitchen_fluxer:
+      friendly_name: Kitchen Fluxer
       state: 'on'
+  metadata:
+    switch.livingroom_fluxer:
+      entity_only: true
+    switch.kitchen_fluxer:
+      entity_only: true
 - id: '1624162387680'
   name: Lights On Kitchen
   entities:

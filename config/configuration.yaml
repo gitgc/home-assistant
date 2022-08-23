@@ -12,7 +12,7 @@ lovelace:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 127.0.0.1
+#    - 127.0.0.1
     - 172.18.0.2
     - 172.24.0.2
     - 172.0.0.0/8
