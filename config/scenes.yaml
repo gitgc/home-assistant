@@ -1,378 +1,4 @@
 - id: '1623625593149'
-  name: Lights On
-  entities:
-    switch.arc_lamp:
-      friendly_name: Arc Lamp
-      icon: hass:lightbulb
-      state: 'off'
-    light.dining_table_lights:
-      supported_color_modes:
-      - brightness
-      color_mode: brightness
- #     brightness: 41
-      entity_id:
-      - light.dining_room_edison_1
-      - light.dining_table_edison_2
-      - light.dining_table_edison_3
-      - light.dining_table_edison_4
-      - light.dining_table_edison_6
-      - light.dining_room_edison_7
-      - light.dining_room_edison_8
-      - light.dining_room_edison_5
-      friendly_name: Dining Table Lights
-      icon: mdi:lightbulb-group
-      supported_features: 0
-      state: 'on'
-    light.lounge_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-#      brightness: 204
-#      hs_color:
-#      - 222.383
-#      - 12.344
-#      rgb_color:
-#      - 223
-#      - 232
-#      - 255
-#      xy_color:
-#      - 0.297
-#      - 0.304
-      entity_id:
-      - light.lounge_ceiling_1
-      - light.lounge_ceiling_2_2
-      - light.dining_fireplace_1
-      - light.lounge_fireplace_2
-      friendly_name: Lounge Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.kitchen_ceiling_3_2:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-#      brightness: 64
-#      hs_color:
-#      - 229.394
-#      - 7.381
-#      rgb_color:
-#      - 236
-#      - 239
-#      - 255
-#      xy_color:
-#      - 0.308
-#      - 0.312
-      friendly_name: Kitchen Cupboard Light
-      supported_features: 23
-      state: 'on'
-    light.kitchen_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Cool white
-      - Cozy
-      - Daylight
-      - Focus
-      - Golden white
-      - Night light
-      - Pulse
-      - Relax
-      - Steampunk
-      - TV time
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-#      brightness: 156
-#      color_temp: 200
-      entity_id:
-      - light.kitchen_ceiling_1
-      - light.kitchen_ceiling_2_2
-      friendly_name: Kitchen Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.living_room_door:
-      min_mireds: 153
-      max_mireds: 500
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-#      brightness: 63
-#      color_temp: 200
-      is_hue_group: true
-      friendly_name: Living Room Door
-      supported_features: 43
-      state: 'on'
-    light.livingroom_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-#      brightness: 128
-#      hs_color:
-#      - 222.383
-#      - 12.344
-#      rgb_color:
-#      - 223
-#      - 232
-#      - 255
-#      xy_color:
-#      - 0.297
-#      - 0.304
-      entity_id:
-      - light.living_room_ceiling_1
-      - light.living_room_ceiling_2
-      - light.living_room_ceiling_3_2
-      friendly_name: Livingroom Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.livingroom_fireplace_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
- #     brightness: 204
- #     hs_color:
- #     - 26.64
- #     - 20.072
- #     rgb_color:
- #     - 255
- #     - 226
- #     - 203
- #     xy_color:
- #     - 0.375
- #     - 0.35
-      entity_id:
-      - light.living_room_fireplace_1
-      - light.livingroom_fireplace_2_2
-      friendly_name: Livingroom Fireplace Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.hallway_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-#      brightness: 128
-#      hs_color:
-#      - 29.499
-#      - 22.416
-#      rgb_color:
-#      - 255
-#      - 225
-#      - 197
-#      xy_color:
-#      - 0.38
-#      - 0.355
-      entity_id:
-      - light.hall_light_1
-      - light.hall_light_2
-      - light.hall_ceiling_3
-      friendly_name: Hallway Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.kitchen_counter_lights:
-      supported_color_modes:
-      - brightness
-      color_mode: brightness
-#      brightness: 41
-      entity_id:
-      - light.kitchen_edison_1_2
-      - light.kitchen_edison_3_2
-      - light.kitchen_edison_2_2
-      friendly_name: Kitchen Counter Lights
-      icon: mdi:lightbulb-group
-      supported_features: 0
-      state: 'on'
   name: Good Evening
   entities:
     switch.arc_lamp:
@@ -1086,370 +712,6 @@
       icon: mdi:lightbulb-group
       supported_features: 4
       state: 'off'
-- id: '1624161849420'
-  name: Shields Up!
-  entities:
-    lock.kitchen_door_lock:
-      attribution: Data provided by Wyze
-      state: locked
-      available: true
-      door_open: false
-      device_model: YD.LO1
-      mac: YD.LO1.d48129d5cd31dd090d0837c5ca1816e2
-      lock battery: 74%
-      keypad battery: 87%
-      friendly_name: Kitchen Door Lock
-    lock.back_door_lock:
-      attribution: Data provided by Wyze
-      state: locked
-      available: true
-      door_open: false
-      device_model: YD.LO1
-      mac: YD.LO1.9ec357c00d50042cf537bf95af313524
-      lock battery: 76%
-      keypad battery: 90%
-      friendly_name: Back Door Lock
-    lock.den_door_lock:
-      attribution: Data provided by Wyze
-      state: locked
-      available: true
-      door_open: false
-      device_model: YD.LO1
-      mac: YD.LO1.f8d3a0b92a41bca526a82e3f3c3f56d4
-      lock battery: 77%
-      keypad battery: 92%
-      friendly_name: Den Door Lock
-    lock.living_room_door_lock:
-      attribution: Data provided by Wyze
-      state: locked
-      available: true
-      door_open: false
-      device_model: YD.LO1
-      mac: YD.LO1.da383536fa7f98c0ae5acb384b3518d8
-      lock battery: 75%
-      friendly_name: Living Room Door Lock
-  icon: mdi:home-lock
-  name: Good Evening Kitchen
-  entities:
-    light.kitchen_counter_lights:
-      supported_color_modes:
-      - brightness
-      color_mode: brightness
-      brightness: 41
-      entity_id:
-      - light.kitchen_edison_1_2
-      - light.kitchen_edison_3_2
-      - light.kitchen_edison_2_2
-      friendly_name: Kitchen Counter Lights
-      icon: mdi:lightbulb-group
-      supported_features: 0
-      state: 'on'
-    light.kitchen_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Cool white
-      - Cozy
-      - Daylight
-      - Focus
-      - Golden white
-      - Night light
-      - Pulse
-      - Relax
-      - Steampunk
-      - TV time
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-      brightness: 84
-      color_temp: 222
-      entity_id:
-      - light.kitchen_ceiling_1
-      - light.kitchen_ceiling_2_2
-      friendly_name: Kitchen Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.kitchen_ceiling_3_2:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-      brightness: 89
-      hs_color:
-      - 229.743
-      - 6.675
-      rgb_color:
-      - 237
-      - 240
-      - 255
-      xy_color:
-      - 0.309
-      - 0.313
-      friendly_name: Kitchen Cupboard Light
-      supported_features: 23
-      state: 'on'
-  icon: mdi:stove
-  name: Good Evening Dining Room
-  entities:
-    light.dining_table_lights:
-      supported_color_modes:
-      - brightness
-      color_mode: brightness
-      brightness: 41
-      entity_id:
-      - light.dining_room_edison_1
-      - light.dining_table_edison_2
-      - light.dining_table_edison_3
-      - light.dining_table_edison_4
-      - light.dining_table_edison_6
-      - light.dining_room_edison_7
-      - light.dining_room_edison_8
-      - light.dining_room_edison_5
-      friendly_name: Dining Table Lights
-      icon: mdi:lightbulb-group
-      supported_features: 0
-      state: 'on'
-    light.lounge_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-      brightness: 128
-      hs_color:
-      - 44.81
-      - 18.794
-      rgb_color:
-      - 255
-      - 242
-      - 207
-      xy_color:
-      - 0.363
-      - 0.364
-      entity_id:
-      - light.lounge_ceiling_1
-      - light.lounge_ceiling_2_2
-      - light.dining_fireplace_1
-      - light.lounge_fireplace_2
-      friendly_name: Lounge Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    switch.arc_lamp:
-      friendly_name: Arc Lamp
-      icon: mdi:lamp
-      state: 'on'
-  icon: mdi:silverware
-  name: Good Evening Living Room
-  entities:
-    light.livingroom_ceiling_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-      brightness: 89
-      hs_color:
-      - 30
-      - 30.226
-      rgb_color:
-      - 255
-      - 216
-      - 177
-      xy_color:
-      - 0.403
-      - 0.366
-      entity_id:
-      - light.living_room_ceiling_1
-      - light.living_room_ceiling_2
-      - light.living_room_ceiling_3_2
-      friendly_name: Livingroom Ceiling Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.livingroom_fireplace_lights:
-      min_mireds: 153
-      max_mireds: 370
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Christmas
-      - Club
-      - Cool white
-      - Cozy
-      - Daylight
-      - Deepdive
-      - Fall
-      - Fireplace
-      - Focus
-      - Forest
-      - Golden white
-      - Halloween
-      - Jungle
-      - Mojito
-      - Night light
-      - Ocean
-      - Party
-      - Pastel Colors
-      - Plantgrowth
-      - Pulse
-      - Relax
-      - Rhythm
-      - Romance
-      - Spring
-      - Steampunk
-      - Summer
-      - Sunset
-      - TV time
-      - True colors
-      - Wake up
-      - Warm White
-      supported_color_modes:
-      - color_temp
-      - hs
-      color_mode: hs
-      brightness: 64
-      hs_color:
-      - 30
-      - 30.226
-      rgb_color:
-      - 255
-      - 216
-      - 177
-      xy_color:
-      - 0.403
-      - 0.366
-      entity_id:
-      - light.living_room_fireplace_1
-      - light.livingroom_fireplace_2_2
-      friendly_name: Livingroom Fireplace Lights
-      icon: mdi:lightbulb-group
-      supported_features: 4
-      state: 'on'
-    light.living_room_door:
-      min_mireds: 153
-      max_mireds: 500
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-      brightness: 63
-      color_temp: 200
-      is_hue_group: true
-      friendly_name: Living Room Door
-      supported_features: 43
-      state: 'on'
-  icon: mdi:sofa
 - id: '1624162353593'
   name: Lights On Living Room
   entities:
@@ -1501,17 +763,6 @@
       friendly_name: Livingroom Ceiling Lights
       supported_features: 4
       color_mode: hs
-#      brightness: 122
-#      hs_color:
-#      - 223.574
-#      - 9.608
-#      rgb_color:
-#      - 230
-#      - 237
-#      - 255
-#      xy_color:
-#      - 0.303
-#      - 0.31
       state: 'on'
     light.livingroom_fireplace_lights:
       min_mireds: 153
@@ -1579,17 +830,6 @@
       - color_temp
       - hs
       color_mode: hs
-#      brightness: 64
-#      hs_color:
-#      - 229.743
-#      - 6.675
-#      rgb_color:
-#      - 237
-#      - 240
-#      - 255
-#      xy_color:
-#      - 0.309
-#      - 0.313
       friendly_name: Kitchen Cupboard Light
       supported_features: 23
       state: 'on'
@@ -1614,8 +854,6 @@
       supported_color_modes:
       - color_temp
       color_mode: color_temp
-#      brightness: 156
-#      color_temp: 200
       entity_id:
       - light.kitchen_ceiling_1
       - light.kitchen_ceiling_2_2
@@ -1627,7 +865,6 @@
       supported_color_modes:
       - brightness
       color_mode: brightness
-#      brightness: 41
       entity_id:
       - light.kitchen_edison_1_2
       - light.kitchen_edison_3_2
@@ -1643,7 +880,6 @@
       supported_color_modes:
       - brightness
       color_mode: brightness
-#      brightness: 41
       entity_id:
       - light.dining_room_edison_1
       - light.dining_table_edison_2
@@ -1698,17 +934,6 @@
       - color_temp
       - hs
       color_mode: hs
-#      brightness: 204
-#      hs_color:
-#      - 222.598
-#      - 10.788
-#      rgb_color:
-#      - 227
-#      - 235
-#      - 255
-#      xy_color:
-#      - 0.3
-#      - 0.308
       entity_id:
       - light.lounge_ceiling_1
       - light.lounge_ceiling_2_2
@@ -1722,3 +947,239 @@
       friendly_name: Arc Lamp
       icon: mdi:lamp
       state: 'off'
+- id: '1661224631878'
+  name: Lights Off Dining Room
+  entities:
+    light.dining_table_lights:
+      supported_color_modes:
+      - brightness
+      entity_id:
+      - light.dining_edison_1
+      - light.dining_edison_2
+      - light.dining_edison_3
+      - light.dining_edison_4
+      - light.dining_edison_5
+      - light.dining_edison_6
+      - light.dining_edison_7
+      - light.dining_edison_8
+      icon: mdi:lightbulb-group
+      friendly_name: Dining Table Lights
+      supported_features: 0
+      state: 'off'
+    light.lounge_ceiling_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Christmas
+      - Club
+      - Cool white
+      - Cozy
+      - Daylight
+      - Deepdive
+      - Fall
+      - Fireplace
+      - Focus
+      - Forest
+      - Golden white
+      - Halloween
+      - Jungle
+      - Mojito
+      - Night light
+      - Ocean
+      - Party
+      - Pastel Colors
+      - Plantgrowth
+      - Pulse
+      - Relax
+      - Rhythm
+      - Romance
+      - Spring
+      - Steampunk
+      - Summer
+      - Sunset
+      - TV time
+      - True colors
+      - Wake up
+      - Warm White
+      supported_color_modes:
+      - color_temp
+      - hs
+      entity_id:
+      - light.lounge_ceiling_1
+      - light.lounge_ceiling_2
+      - light.lounge_fireplace_1
+      - light.lounge_fireplace_2
+      icon: mdi:lightbulb-group
+      friendly_name: Lounge Ceiling Lights
+      supported_features: 4
+      state: 'off'
+    switch.arc_lamp:
+      icon: mdi:lamp
+      friendly_name: Arc Lamp
+      state: 'off'
+  metadata: {}
+- id: '1661225075898'
+  name: Lights Off Kitchen
+  entities:
+    light.kitchen_ceiling_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Cool white
+      - Cozy
+      - Daylight
+      - Focus
+      - Golden white
+      - Night light
+      - Pulse
+      - Relax
+      - Steampunk
+      - TV time
+      - Wake up
+      - Warm White
+      supported_color_modes:
+      - color_temp
+      entity_id:
+      - light.kitchen_ceiling_1
+      - light.kitchen_ceiling_2
+      icon: mdi:lightbulb-group
+      friendly_name: Kitchen Ceiling Lights
+      supported_features: 4
+      state: 'off'
+    light.kitchen_counter_lights:
+      supported_color_modes:
+      - brightness
+      entity_id:
+      - light.kitchen_edison_1
+      - light.kitchen_edison_2
+      - light.kitchen_edison_3
+      icon: mdi:lightbulb-group
+      friendly_name: Kitchen Counter Lights
+      supported_features: 0
+      state: 'off'
+  metadata: {}
+- id: '1661225209048'
+  name: Lights On Hall
+  entities:
+    light.hallway_ceiling_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Christmas
+      - Club
+      - Cool white
+      - Cozy
+      - Daylight
+      - Deepdive
+      - Fall
+      - Fireplace
+      - Focus
+      - Forest
+      - Golden white
+      - Halloween
+      - Jungle
+      - Mojito
+      - Night light
+      - Ocean
+      - Party
+      - Pastel Colors
+      - Plantgrowth
+      - Pulse
+      - Relax
+      - Rhythm
+      - Romance
+      - Spring
+      - Steampunk
+      - Summer
+      - Sunset
+      - TV time
+      - True colors
+      - Wake up
+      - Warm White
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 145
+      color_temp: 343
+      hs_color:
+      - 27.971
+      - 59.254
+      rgb_color:
+      - 255
+      - 174
+      - 103
+      xy_color:
+      - 0.505
+      - 0.385
+      entity_id:
+      - light.hall_ceiling_1
+      - light.hall_ceiling_2
+      - light.hall_ceiling_3
+      icon: mdi:lightbulb-group
+      friendly_name: Hallway Ceiling Lights
+      supported_features: 4
+      state: 'on'
+  metadata:
+    light.hallway_ceiling_lights:
+      entity_only: true
+- id: '1661225236269'
+  name: Lights Off Hall
+  entities:
+    light.hallway_ceiling_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Christmas
+      - Club
+      - Cool white
+      - Cozy
+      - Daylight
+      - Deepdive
+      - Fall
+      - Fireplace
+      - Focus
+      - Forest
+      - Golden white
+      - Halloween
+      - Jungle
+      - Mojito
+      - Night light
+      - Ocean
+      - Party
+      - Pastel Colors
+      - Plantgrowth
+      - Pulse
+      - Relax
+      - Rhythm
+      - Romance
+      - Spring
+      - Steampunk
+      - Summer
+      - Sunset
+      - TV time
+      - True colors
+      - Wake up
+      - Warm White
+      supported_color_modes:
+      - color_temp
+      - hs
+      entity_id:
+      - light.hall_ceiling_1
+      - light.hall_ceiling_2
+      - light.hall_ceiling_3
+      icon: mdi:lightbulb-group
+      friendly_name: Hallway Ceiling Lights
+      supported_features: 4
+      state: 'off'
+  metadata:
+    light.hallway_ceiling_lights:
+      entity_only: true
