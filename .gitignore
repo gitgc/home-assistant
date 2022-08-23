@@ -2,3 +2,10 @@
 *.pyc
 home_assistant_config/custom_components/fordpass/**.txt
 *.gz
+*.tar
+*.zip
+/config/.storage/**/*
+/config/.cloud/**/*
+/config/core
+/config/home-assistant_v2.db
+/config/home-assistant_v2.db-wal
