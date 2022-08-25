@@ -9,12 +9,6 @@ services:
     privileged: true
     environment:
       - TZ=America/Los_Angeles
-      - SPOTIFY_CLIENT_ID
-      - SPOTIFY_CLIENT_SECRET
-      - NEST_CLIENT_ID
-      - NEST_CLIENT_SECRET
-      - NEST_PROJECT_ID
-      - NEST_SUBSCRIBER_ID
     healthcheck:
       test: ["CMD", "curl", "--fail", http://localhost:8123]
       interval: 1m30s
