@@ -1,11 +1,15 @@
-- alias: Frigate mobile notifications
+- id: d7bb2a87510f42ee8e0bcc202a562ef2
+  alias: Frigate mobile notifications
   description: ''
   trigger:
   - platform: mqtt
     topic: frigate/events
     payload: new
     value_template: '{{ value_json.type }}'
-  condition: []
+  condition: '{{ trigger.payload_json["after"]["camera"] not in [''living-room'',''dining-room'']
+    }}
+
+    '
   action:
   - service: notify.carrie_gio
     data_template:
@@ -16,7 +20,6 @@
         when: '{{trigger.payload_json["after"]["start_time"]|int}}'
         entity_id: camera.{{trigger.payload_json["after"]["camera"]|replace('-', '_')}}
   mode: single
-  id: d7bb2a87510f42ee8e0bcc202a562ef2
 - alias: Kitchen doorbell press notifications
   description: ''
   trigger:
@@ -100,6 +103,10 @@
       hours: 0
       minutes: 0
       seconds: 0
+  condition:
+  - condition: state
+    entity_id: light.lounge_ceiling_lights
+    state: 'off'
   action:
   - service: scene.turn_on
     target:

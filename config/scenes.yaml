@@ -763,6 +763,17 @@
       friendly_name: Livingroom Ceiling Lights
       supported_features: 4
       color_mode: hs
+      brightness: 143
+      hs_color:
+      - 29.712
+      - 19.528
+      rgb_color:
+      - 255
+      - 229
+      - 205
+      xy_color:
+      - 0.372
+      - 0.352
       state: 'on'
     light.livingroom_fireplace_lights:
       min_mireds: 153
@@ -1182,4 +1193,77 @@
       state: 'off'
   metadata:
     light.hallway_ceiling_lights:
+      entity_only: true
+- id: '1661312816371'
+  name: Lights Off Living Room
+  entities:
+    light.livingroom_ceiling_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Christmas
+      - Club
+      - Cool white
+      - Cozy
+      - Daylight
+      - Deepdive
+      - Fall
+      - Fireplace
+      - Focus
+      - Forest
+      - Golden white
+      - Halloween
+      - Jungle
+      - Mojito
+      - Night light
+      - Ocean
+      - Party
+      - Pastel Colors
+      - Plantgrowth
+      - Pulse
+      - Relax
+      - Rhythm
+      - Romance
+      - Spring
+      - Steampunk
+      - Summer
+      - Sunset
+      - TV time
+      - True colors
+      - Wake up
+      - Warm White
+      supported_color_modes:
+      - color_temp
+      - hs
+      entity_id:
+      - light.living_room_ceiling_1
+      - light.living_room_ceiling_2
+      - light.living_room_ceiling_3
+      icon: mdi:lightbulb-group
+      friendly_name: Livingroom Ceiling Lights
+      supported_features: 4
+      state: 'off'
+    light.livingroom_fireplace_lights:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list: []
+      supported_color_modes:
+      - color_temp
+      - hs
+      icon: mdi:lightbulb-group
+      friendly_name: Livingroom Fireplace Lights
+      supported_features: 4
+      state: unavailable
+    switch.livingroom_fluxer:
+      friendly_name: Livingroom Fluxer
+      state: 'on'
+    switch.kitchen_fluxer:
+      friendly_name: Kitchen Fluxer
+      state: 'on'
+  metadata:
+    switch.livingroom_fluxer:
+      entity_only: true
+    switch.kitchen_fluxer:
       entity_only: true
