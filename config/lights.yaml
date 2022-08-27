@@ -55,9 +55,9 @@
 - platform: group
   name: Hallway Ceiling Lights
   entities:
-    - light.wiz_dimmable_white_9ea440
-    - light.wiz_dimmable_white_9edddd
-    - light.wiz_dimmable_white_9f0230
+    - light.wiz_rgbw_tunable_38d2bb
+    - light.wiz_rgbw_tunable_14ee32
+    - light.wiz_rgbw_tunable_158831
 
 - platform: group
   name: Bedroom Door Lights
