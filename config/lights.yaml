@@ -1,158 +1,50 @@
-- platform: wiz_light
-  name: Porch Light 1
-  host: 192.168.1.10 #a8:bb:50:fa:1a:3c wiz_fa1a3c
-
-- platform: wiz_light
-  name: Porch Light 2
-  host: 192.168.1.27 #6c:29:90:15:88:00 wiz_158800
-
-- platform: wiz_light
-  name: Porch Light 3
-  host: 192.168.1.245 #6c:29:90:14:a7:a5 wiz_14a7a5
-
-- platform: wiz_light
-  name: Porch Light 4
-  host: 192.168.1.231 #6c:29:90:14:d0:2a wiz_14d02a
-
 - platform: group
   name: Porch Lights
   entities:
-    - light.porch_light_1
-    - light.porch_light_2
-    - light.porch_light_3
-    - light.porch_light_4
-
-- platform: wiz_light
-  name: Lounge Ceiling 1
-  host: 192.168.1.200
-
-- platform: wiz_light
-  name: Lounge Ceiling 2
-  host: 192.168.1.174   
-
-- platform: wiz_light
-  name: Lounge Fireplace 1
-  host: 192.168.1.49 # 6c:29:90:15:88:16
-  
-- platform: wiz_light
-  name: Lounge Fireplace 2
-  host: 192.168.1.63 # 6c:29:90:15:88:21 wiz_158821
+    - light.wiz_rgbw_tunable_fa1a3c
+    - light.wiz_rgbw_tunable_158800
+    - light.wiz_rgbw_tunable_14a7a5
+    - light.wiz_rgbw_tunable_14d02a
 
 - platform: group
   name: Lounge Ceiling Lights
   entities:
-    - light.lounge_ceiling_1
-    - light.lounge_ceiling_2
-    - light.Lounge_fireplace_1
-    - light.lounge_fireplace_2
-
-- platform: wiz_light
-  name: Dining Edison 1
-  host: 192.168.1.225 #a8:bb:50:9e:dc:6e wiz_9edc6e
-
-- platform: wiz_light
-  name: Dining Edison 2
-  host: 192.168.1.182 #a8:bb:50:9e:ae:f2 wiz_9eaef2
-
-- platform: wiz_light
-  name: Dining Edison 3
-  host: 192.168.1.226 #a8:bb:50:9e:c9:02 wiz_9ec902
-
-- platform: wiz_light
-  name: Dining Edison 4
-  host: 192.168.1.221 #a8:bb:50:9e:f8:d3 wiz_9ef8d3
-
-- platform: wiz_light
-  name: Dining Edison 5
-  host: 192.168.1.234 #a8:bb:50:9e:d3:87 wiz_9ed387
-
-- platform: wiz_light
-  name: Dining Edison 6
-  host: 192.168.1.213 #a8:bb:50:9e:e7:73 wiz_9ee773
-
-- platform: wiz_light
-  name: Dining Edison 7
-  host: 192.168.1.30 #a8:bb:50:9e:b6:bb wiz_9eb6bb
-
-- platform: wiz_light
-  name: Dining Edison 8
-  host: 192.168.1.178 #a8:bb:50:9e:b7:de wiz_9eb7de
+    - light.wiz_rgbw_tunable_380239
+    - light.wiz_rgbw_tunable_38021f
+    - light.wiz_rgbw_tunable_158816
+    - light.wiz_rgbw_tunable_158821
 
 - platform: group
   name: Dining Table Lights
   entities:
-    - light.dining_edison_1
-    - light.dining_edison_2
-    - light.dining_edison_3
-    - light.dining_edison_4
-    - light.dining_edison_5
-    - light.dining_edison_6
-    - light.dining_edison_7
-    - light.dining_edison_8
-
-- platform: wiz_light
-  name: Kitchen Edison 1
-  host: 192.168.1.132 #a8:bb:50:9e:a4:40 wiz_9ea440
-
-- platform: wiz_light
-  name: Kitchen Edison 2
-  host: 192.168.1.195 #a8:bb:50:9e:dd:dd wiz_9edddd
-
-- platform: wiz_light
-  name: Kitchen Edison 3
-  host: 192.168.1.83 #a8:bb:50:9f:02:30 wiz_9f0230
+    - light.wiz_dimmable_white_9edc6e
+    - light.wiz_dimmable_white_9eaef2
+    - light.wiz_dimmable_white_9ec902
+    - light.wiz_dimmable_white_9ef8d3
+    - light.wiz_dimmable_white_9ed387
+    - light.wiz_dimmable_white_9ee773
+    - light.wiz_dimmable_white_9eb6bb
+    - light.wiz_dimmable_white_9eb7de
 
 - platform: group
   name: Kitchen Counter Lights
   entities:
-    - light.kitchen_edison_1
-    - light.kitchen_edison_2
-    - light.kitchen_edison_3
-
-- platform: wiz_light
-  name: Kitchen Ceiling 1
-  host: 192.168.1.242 #6c:29:90:16:5b:58 wiz_165b58
-
-- platform: wiz_light
-  name: Kitchen Ceiling 2
-  host: 192.168.1.93 #6c:29:90:16:3e:c9 wiz_163ec9
-
-- platform: wiz_light
-  name: Kitchen Ceiling 3
-  host: 192.168.1.21 #6c:29:90:38:01:f2 wiz_3801f2
+    - light.wiz_dimmable_white_9ea440
+    - light.wiz_dimmable_white_9edddd
+    - light.wiz_dimmable_white_9f0230
 
 - platform: group
   name: Kitchen Ceiling Lights
   entities:
-    - light.kitchen_ceiling_1
-    - light.kitchen_ceiling_2
-
-- platform: wiz_light
-  name: Living Room Ceiling 1
-  host: 192.168.1.51 #6c:29:90:14:cf:de wiz_14cfde
-
-- platform: wiz_light
-  name: Living Room Ceiling 2
-  host: 192.168.1.60 #6c:29:90:15:b7:f3 wiz_15b7f3
-
-- platform: wiz_light
-  name: Living Room Ceiling 3
-  host: 192.168.1.162 #6c:29:90:15:87:f5 wiz_1587f5
+    - light.wiz_tunable_white_165b58
+    - light.wiz_tunable_white_163ec9
 
 - platform: group
   name: Livingroom Ceiling Lights
   entities:
-    - light.living_room_ceiling_1
-    - light.living_room_ceiling_2
-    - light.living_room_ceiling_3
-
-- platform: wiz_light
-  name: Living Room Fireplace 1
-  host: 192.168.1.105 #6c:29:90:38:b5:52 wiz_38b552
-
-- platform: wiz_light
-  name: Living Room Fireplace 2
-  host: 192.168.1.151 #6c:29:90:1e:ab:23 wiz_1eab23
+    - light.wiz_rgbw_tunable_14cfde
+    - light.wiz_rgbw_tunable_15b7f3
+    - light.wiz_rgbw_tunable_1587f5
 
 - platform: group
   name: Livingroom Fireplace Lights
@@ -160,24 +52,12 @@
     - light.living_room_fireplace_1
     - light.living_room_fireplace_2
 
-- platform: wiz_light
-  name: Hall Ceiling 1
-  host: 192.168.1.217 #6c:29:90:38:d2:bb wiz_38d2bb
-
-- platform: wiz_light
-  name: Hall Ceiling 2
-  host: 192.168.1.113 #6c:29:90:14:ee:32 wiz_14ee32
-
-- platform: wiz_light
-  name: Hall Ceiling 3
-  host: 192.168.1.76 #6c:29:90:15:88:31 wiz_158831
-
 - platform: group
   name: Hallway Ceiling Lights
   entities:
-    - light.hall_ceiling_1
-    - light.hall_ceiling_2
-    - light.hall_ceiling_3
+    - light.wiz_dimmable_white_9ea440
+    - light.wiz_dimmable_white_9edddd
+    - light.wiz_dimmable_white_9f0230
 
 - platform: group
   name: Bedroom Door Lights

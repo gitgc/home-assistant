@@ -1,9 +1,9 @@
 - platform: flux
   lights:
-    - light.lounge_ceiling_1
-    - light.lounge_ceiling_2
-    - light.Lounge_fireplace_1
-    - light.lounge_fireplace_2
+    - light.wiz_rgbw_tunable_380239
+    - light.wiz_rgbw_tunable_38021f
+    - light.wiz_rgbw_tunable_158816
+    - light.wiz_rgbw_tunable_158821
   name: Lounge Fluxer
   start_time: "7:00"
   stop_time: "23:00"
@@ -11,14 +11,14 @@
   sunset_colortemp: 3000
   stop_colortemp: 2000
   mode: mired
-  transition: 30
-  interval: 120
+  transition: 15
+  interval: 30
 
 - platform: flux
   lights:
-    - light.living_room_ceiling_1
-    - light.living_room_ceiling_2
-    - light.living_room_ceiling_3
+    - light.wiz_rgbw_tunable_14cfde
+    - light.wiz_rgbw_tunable_15b7f3
+    - light.wiz_rgbw_tunable_1587f5
   name: Livingroom Fluxer
   start_time: "7:00"
   stop_time: "23:00"
@@ -26,26 +26,13 @@
   sunset_colortemp: 3000
   stop_colortemp: 2000
   mode: mired
-  transition: 30
-  interval: 120
+  transition: 15
+  interval: 30
 
 - platform: flux
   lights:
-    - light.kitchen_ceiling_3
-  name: Kitchen Cupboard Fluxer
-  start_time: "7:00"
-  stop_time: "23:00"
-  start_colortemp: 4000
-  sunset_colortemp: 3000
-  stop_colortemp: 2000
-  mode: mired
-  transition: 30
-  interval: 120
-
-- platform: flux
-  lights:
-    - light.kitchen_ceiling_1
-    - light.kitchen_ceiling_2
+    - light.wiz_tunable_white_165b58
+    - light.wiz_tunable_white_163ec9
   name: Kitchen Fluxer
   start_time: "7:00"
   stop_time: "23:00"
@@ -53,20 +40,20 @@
   sunset_colortemp: 3000
   stop_colortemp: 2000
   mode: mired
-  transition: 30
-  interval: 120
+  transition: 15
+  interval: 30
 
 - platform: flux
   lights:
-    - light.hall_ceiling_1
-    - light.hall_ceiling_2
-    - light.hall_ceiling_3
+    - light.wiz_dimmable_white_9ea440
+    - light.wiz_dimmable_white_9edddd
+    - light.wiz_dimmable_white_9f0230
   name: Hall Fluxer
   start_time: "7:00"
   stop_time: "23:00"
   start_colortemp: 4000
   sunset_colortemp: 3000
   stop_colortemp: 2000
-  transition: 30
+  transition: 15
   mode: mired
-  interval: 120
+  interval: 30

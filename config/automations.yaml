@@ -98,14 +98,14 @@
   trigger:
   - platform: state
     entity_id:
-    - binary_sensor.living_room_person_motion
+    - sensor.living_room_person
     for:
       hours: 0
       minutes: 0
       seconds: 0
   condition:
   - condition: state
-    entity_id: light.lounge_ceiling_lights
+    entity_id: light.livingroom_ceiling_lights
     state: 'off'
   action:
   - service: scene.turn_on
@@ -300,5 +300,38 @@
   - service: scene.turn_on
     target:
       entity_id: scene.lights_off_hall
+    metadata: {}
+  mode: single
+- id: '1661400245461'
+  alias: Dining Room person detection
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - camera.dining_room_person
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition:
+  - condition: state
+    entity_id: light.livingroom_ceiling_lights
+    state: 'off'
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_living_room
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_dining_room
     metadata: {}
   mode: single
