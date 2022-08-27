@@ -10,3 +10,4 @@ home_assistant_config/custom_components/fordpass/**.txt
 /config/home-assistant_v2.db
 /config/home-assistant_v2.db-wal
 /config/secrets.yaml
+config/custom_components/fordpass/*.txt
