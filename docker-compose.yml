@@ -17,23 +17,27 @@ services:
       start_period: 60s
 
   caddy:
-    build: ./caddy
-    container_name: home-assistant-caddy
+    build: ./home-proxy-webserver
+    container_name: home-assistant-home-proxy
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     environment:
       - DO_AUTH_TOKEN
+      - CADDY_SUBDOMAIN
+      - CADDY_DOMAIN
+      - CADDY_PROXY_UPSTREAM
+      - CADDY_HEALTH_CHECK_URI
     volumes:
       - "./Caddyfile:/etc/caddy/Caddyfile"
-      - "./caddy/site/:/var/www/html/"
-      - "./caddy/caddy_data/:/data/"
-      - "./caddy/caddy_config/:/config/"
+      - "./home-proxy-webserver/site/:/var/www/html/"
+      - "./home-proxy-webserver/caddy_data/:/data/"
+      - "./home-proxy-webserver/caddy_config/:/config/"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
-      test: [ "CMD", "wget", "--spider", "https://home.coia.me/caddy-health-check" ]
+      test: [ "CMD", "wget", "--spider", "${CADDY_HEALTH_CHECK_URI}" ]
       interval: 30s
       timeout: 10s
       retries: 5
