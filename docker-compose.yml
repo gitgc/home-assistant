@@ -31,9 +31,8 @@ services:
       - CADDY_HEALTH_CHECK_URI
     volumes:
       - "./Caddyfile:/etc/caddy/Caddyfile"
-      - "./home-proxy-webserver/site/:/var/www/html/"
-      - "./home-proxy-webserver/caddy_data/:/data/"
-      - "./home-proxy-webserver/caddy_config/:/config/"
+      - "./caddy/data/:/data/"
+      - "./caddy/config/:/config/"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
@@ -44,3 +43,17 @@ services:
       start_period: 60s
     depends_on:
       - home-assistant
+
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: unless-stopped
+    environment:
+      - WATCHTOWER_SCHEDULE
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_ROLLING_RESTART=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_REVIVE_STOPPED=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
