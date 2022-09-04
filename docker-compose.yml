@@ -17,7 +17,7 @@ services:
       start_period: 60s
 
   home-assistant-home-proxy:
-    build: ./home-proxy-webserver
+    image: ghcr.io/gitgc/home-proxy-webserver:main
     container_name: home-assistant-home-proxy
     restart: unless-stopped
     ports:
