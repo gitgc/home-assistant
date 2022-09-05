@@ -2,7 +2,7 @@
   acme_dns digitalocean {env.DO_AUTH_TOKEN}
 }
 
-{$CADDY_SUBDOMAIN}.{$CADDY_DOMAIN} {
+home.{$CADDY_DOMAIN} {
   encode gzip
   
   respond /caddy-health-check 200
