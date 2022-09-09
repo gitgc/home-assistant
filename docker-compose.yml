@@ -20,6 +20,7 @@ services:
     image: ghcr.io/gitgc/home-proxy-webserver:main
     container_name: home-assistant-home-proxy
     restart: unless-stopped
+    init: true
     ports:
       - "80:80"
       - "443:443"
