@@ -5,6 +5,7 @@
 *.zip
 /config/.storage/**/*
 /config/.cloud/**/*
+/config/zigbee.*
 /config/core
 /config/home-assistant_v2.db*
 /config/secrets.yaml
