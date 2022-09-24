@@ -335,3 +335,344 @@
       entity_id: scene.lights_on_dining_room
     metadata: {}
   mode: single
+- id: '1662847764038'
+  alias: Dining Lights Switch Button 1
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: d6d06725819a5980355d6dd650d9588b
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_dining_room
+    metadata: {}
+  mode: single
+- id: '1662847872037'
+  alias: Dining Light Switch button 2
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: d6d06725819a5980355d6dd650d9588b
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_2
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  mode: single
+- id: '1662847922646'
+  alias: dining light switch button 2 0ff
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: d6d06725819a5980355d6dd650d9588b
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_2
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_kitchen
+    metadata: {}
+  mode: single
+- id: '1662847960419'
+  alias: Dining Light Switch button 2 off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: d6d06725819a5980355d6dd650d9588b
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_dining_room
+    metadata: {}
+  mode: single
+- id: '1662925758797'
+  alias: Motion - Dining Room
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: 9dfe890ee9fa54e354bf079e6ac36d20
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_dining_room
+    metadata: {}
+  mode: single
+- id: '1662927853231'
+  alias: Motion - kitchen lights
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: 6c01eab2e98a0857525d0c79be9dcc50
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_2
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  mode: single
+- id: '1662928886415'
+  alias: Motion - living room lights
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: bb1e52009f9db63c0965f4aaf8919612
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_3
+    domain: binary_sensor
+  - type: occupied
+    platform: device
+    device_id: 556c4d3174bdb001b1c5b5f5f318402a
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_4
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_living_room
+    metadata: {}
+  mode: single
+- id: '1662932857661'
+  alias: Motion stops - lights off dining room
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: 9dfe890ee9fa54e354bf079e6ac36d20
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_dining_room
+    metadata: {}
+  mode: single
+- id: '1662932910765'
+  alias: motion stops - kitchen lights
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: 6c01eab2e98a0857525d0c79be9dcc50
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_2
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_kitchen
+    metadata: {}
+  mode: single
+- id: '1662932943432'
+  alias: motion stops - living room lights off
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: bb1e52009f9db63c0965f4aaf8919612
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_3
+    domain: binary_sensor
+  - type: not_occupied
+    platform: device
+    device_id: 556c4d3174bdb001b1c5b5f5f318402a
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_4
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_living_room
+    metadata: {}
+  mode: single
+- id: '1662935487512'
+  alias: motion - hall lights on
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: ea806f0b40d036b9fc3729da2f321dfd
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_5
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_hall
+    metadata: {}
+  mode: single
+- id: '1662935510192'
+  alias: Motion stops - hall lights off
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: ea806f0b40d036b9fc3729da2f321dfd
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_occupancy_5
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_hall
+    metadata: {}
+  mode: single
+- id: '1663029994130'
+  alias: Kitchen Light Switch - Kitchen Lights on
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: c38a513b5c0940202e5d44bb2fc7cb58
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_3
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_kitchen
+    metadata: {}
+  mode: single
+- id: '1663030062863'
+  alias: Kitchen light switch 2 living lights on
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: c38a513b5c0940202e5d44bb2fc7cb58
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_4
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_living_room
+    metadata: {}
+  mode: single
+- id: '1663030791130'
+  alias: kitchen sw2 living lights off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: c38a513b5c0940202e5d44bb2fc7cb58
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_4
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_living_room
+    metadata: {}
+  mode: single
+- id: '1663030835681'
+  alias: kitchen sw1 - kitchen lights off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: c38a513b5c0940202e5d44bb2fc7cb58
+    entity_id: switch.lumi_lumi_switch_b2naus01_switch_3
+    domain: switch
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_kitchen
+    metadata: {}
+  mode: single
+- id: '1663037277157'
+  alias: Living Room Coffee Table Button
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 9092fade5aa9c815122aa3010c051d68
+    domain: button
+    entity_id: button.living_room_coffee_table_button_identifybutton
+    type: pressed
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_movie
+    metadata: {}
+  mode: single
+- id: '1663048473703'
+  alias: Carrie bedside button double
+  description: ''
+  trigger:
+  - device_id: 9a69d3054ff067b069251f52e774e8cc
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.good_night
+    metadata: {}
+  mode: single
+- id: '1663048595840'
+  alias: Carrie bedside single
+  description: ''
+  trigger:
+  - device_id: 9a69d3054ff067b069251f52e774e8cc
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.good_morning
+    metadata: {}
+  mode: single
+- id: '1663550981224'
+  alias: Tag Kitchen Door is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 5b5dd504-d454-4ebc-aee4-ba0a9eb8ed13
+  - platform: device
+    device_id: ae390be0bd10ff23381d071779c29d1c
+    domain: lock
+    entity_id: lock.kitchen_door_lock
+    type: unlocked
+  condition: []
+  action: []
+  mode: single
+- id: '1663551121270'
+  alias: Tag Kitchen Door is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 5b5dd504-d454-4ebc-aee4-ba0a9eb8ed13
+  condition: []
+  action:
+  - device_id: ae390be0bd10ff23381d071779c29d1c
+    domain: lock
+    entity_id: lock.kitchen_door_lock
+    type: unlock
+  mode: single
