@@ -39,27 +39,6 @@
         when: '{{trigger["to_state"]["last_changed"]}}'
   mode: single
   id: 1e93c6186792430784aff898ec7975e7
-- alias: car/person porch lights at night
-  description: ''
-  condition:
-    condition: or
-    conditions:
-    - condition: time
-      after: '20:30'
-    - condition: sun
-      before: sunrise
-  use_blueprint:
-    path: homeassistant/motion_light.yaml
-    input:
-      motion_entity:
-      - binary_sensor.front_door_car_motion
-      - binary_sensor.front_door_person_motion
-      - binary_sensor.workshop_yard_car_motion
-      - binary_sensor.workshop_yard_person_motion
-      light_target:
-        entity_id: light.porch_lights
-      no_motion_wait: 6000
-  id: 56db549eda6849aba1a33561117b89ab
 - alias: Re-enable Frigate Notifications
   description: ''
   trigger:
@@ -675,4 +654,51 @@
     domain: lock
     entity_id: lock.kitchen_door_lock
     type: unlock
+  mode: single
+- id: '1664155599103'
+  alias: auto front lights
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: 9cc8d87224fa066d156136d89bd3ad9b
+    entity_id: binary_sensor.garage_yard_all_occupancy
+    domain: binary_sensor
+  - type: occupied
+    platform: device
+    device_id: 82145e615170adfca48f08e1f75460f4
+    entity_id: binary_sensor.workshop_yard_all_occupancy
+    domain: binary_sensor
+  - type: occupied
+    platform: device
+    device_id: 1e2de10a0ee0327774e622c054837c09
+    entity_id: binary_sensor.front_door_all_occupancy
+    domain: binary_sensor
+  - type: value
+    platform: device
+    device_id: 1e2de10a0ee0327774e622c054837c09
+    entity_id: sensor.front_door_car_count
+    domain: sensor
+    above: 0
+  - type: value
+    platform: device
+    device_id: 82145e615170adfca48f08e1f75460f4
+    entity_id: sensor.workshop_yard_car_count
+    domain: sensor
+    above: 0
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_porch
+    metadata: {}
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_porch
+    metadata: {}
   mode: single
