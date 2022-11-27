@@ -702,3 +702,35 @@
       entity_id: scene.lights_off_porch
     metadata: {}
   mode: single
+- id: '1668394084841'
+  alias: Giga desk single tap
+  description: ''
+  trigger:
+  - device_id: d9f90fb9a405d0f33c46d858b1e175a3
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_on_den
+    metadata: {}
+  mode: single
+- id: '1668394128135'
+  alias: giga desk double tap
+  description: ''
+  trigger:
+  - device_id: d9f90fb9a405d0f33c46d858b1e175a3
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.lights_off_den
+    metadata: {}
+  mode: single

@@ -2,6 +2,12 @@
   name: Good Night
   entities:
     light.porch_lights:
+      supported_color_modes:
+      - color_temp
+      - rgbw
+      icon: mdi:lightbulb-group
+      friendly_name: Porch Lights
+      supported_features: 4
       min_mireds: 153
       max_mireds: 454
       effect_list:
@@ -38,12 +44,6 @@
       - True colors
       - Wake up
       - Warm White
-      supported_color_modes:
-      - color_temp
-      - rgbw
-      icon: mdi:lightbulb-group
-      friendly_name: Porch Lights
-      supported_features: 4
       entity_id:
       - light.wiz_rgbw_tunable_fa1a3c
       - light.wiz_rgbw_tunable_158800
@@ -52,11 +52,17 @@
       state: 'off'
     switch.lumi_lumi_switch_b2naus01_switch:
       friendly_name: Kitchen Porch Lights Switch
-      state: 'off'
+      state: unavailable
     switch.lumi_lumi_switch_b2naus01_switch_3:
       friendly_name: Kitchen Light Switch Switch
       state: 'off'
     light.hallway_ceiling_lights:
+      supported_color_modes:
+      - color_temp
+      - rgbw
+      icon: mdi:lightbulb-group
+      friendly_name: Hallway Ceiling Lights
+      supported_features: 4
       min_mireds: 153
       max_mireds: 454
       effect_list:
@@ -93,37 +99,20 @@
       - True colors
       - Wake up
       - Warm White
-      supported_color_modes:
-      - color_temp
-      - rgbw
       entity_id:
       - light.wiz_rgbw_tunable_38d2bb
       - light.wiz_rgbw_tunable_14ee32
       - light.wiz_rgbw_tunable_158831
-      icon: mdi:lightbulb-group
-      friendly_name: Hallway Ceiling Lights
-      supported_features: 4
       state: 'off'
     switch.lumi_lumi_switch_b2naus01_switch_4:
       friendly_name: Kitchen Light Switch Switch
       state: 'off'
     light.dining_table_lights:
-      effect_list:
-      - Bedtime
-      - Candlelight
-      - Cool white
-      - Golden white
-      - Night light
-      - Pulse
-      - Steampunk
-      - Wake up
       supported_color_modes:
       - brightness
       icon: mdi:lightbulb-group
       friendly_name: Dining Table Lights
       supported_features: 4
-      state: unavailable
-    light.kitchen_counter_lights:
       effect_list:
       - Bedtime
       - Candlelight
@@ -133,17 +122,48 @@
       - Pulse
       - Steampunk
       - Wake up
+      color_mode: brightness
+      brightness: 38
+      effect: Daylight
+      entity_id:
+      - light.wiz_dimmable_white_9edc6e
+      - light.wiz_dimmable_white_9eaef2
+      - light.wiz_dimmable_white_9ec902
+      - light.wiz_dimmable_white_9ef8d3
+      - light.wiz_dimmable_white_9ed387
+      - light.wiz_dimmable_white_9ee773
+      - light.wiz_dimmable_white_9eb6bb
+      - light.wiz_dimmable_white_9eb7de
+      state: 'on'
+    light.kitchen_counter_lights:
       supported_color_modes:
       - brightness
+      icon: mdi:lightbulb-group
+      friendly_name: Kitchen Counter Lights
+      supported_features: 4
+      effect_list:
+      - Bedtime
+      - Candlelight
+      - Cool white
+      - Golden white
+      - Night light
+      - Pulse
+      - Steampunk
+      - Wake up
       entity_id:
       - light.wiz_dimmable_white_9ea440
       - light.wiz_dimmable_white_9edddd
       - light.wiz_dimmable_white_9f0230
-      icon: mdi:lightbulb-group
-      friendly_name: Kitchen Counter Lights
-      supported_features: 4
-      state: 'off'
+      color_mode: brightness
+      brightness: 201
+      effect: Daylight
+      state: 'on'
     light.kitchen_ceiling_lights:
+      supported_color_modes:
+      - color_temp
+      icon: mdi:lightbulb-group
+      friendly_name: Kitchen Ceiling Lights
+      supported_features: 4
       min_mireds: 200
       max_mireds: 370
       effect_list:
@@ -161,13 +181,14 @@
       - TV time
       - Wake up
       - Warm White
-      supported_color_modes:
-      - color_temp
-      icon: mdi:lightbulb-group
-      friendly_name: Kitchen Ceiling Lights
-      supported_features: 4
       state: unavailable
     light.livingroom_ceiling_lights:
+      supported_color_modes:
+      - color_temp
+      - rgbw
+      icon: mdi:lightbulb-group
+      friendly_name: Livingroom Ceiling Lights
+      supported_features: 4
       min_mireds: 153
       max_mireds: 454
       effect_list:
@@ -204,18 +225,18 @@
       - True colors
       - Wake up
       - Warm White
-      supported_color_modes:
-      - color_temp
-      - rgbw
       entity_id:
       - light.wiz_rgbw_tunable_14cfde
       - light.wiz_rgbw_tunable_15b7f3
       - light.wiz_rgbw_tunable_1587f5
-      icon: mdi:lightbulb-group
-      friendly_name: Livingroom Ceiling Lights
-      supported_features: 4
       state: 'off'
     light.lounge_ceiling_lights:
+      supported_color_modes:
+      - color_temp
+      - rgbw
+      icon: mdi:lightbulb-group
+      friendly_name: Lounge Ceiling Lights
+      supported_features: 4
       min_mireds: 153
       max_mireds: 454
       effect_list:
@@ -252,17 +273,11 @@
       - True colors
       - Wake up
       - Warm White
-      supported_color_modes:
-      - color_temp
-      - rgbw
       entity_id:
       - light.wiz_rgbw_tunable_380239
       - light.wiz_rgbw_tunable_38021f
       - light.wiz_rgbw_tunable_158816
       - light.wiz_rgbw_tunable_158821
-      icon: mdi:lightbulb-group
-      friendly_name: Lounge Ceiling Lights
-      supported_features: 4
       state: 'off'
     switch.bedroom_lamp_gio_switch:
       friendly_name: Bedroom Lamp Gio Switch
@@ -272,6 +287,21 @@
       state: 'off'
     switch.lumi_lumi_switch_b2naus01_switch_5:
       friendly_name: Porch Lights
+      state: 'off'
+    switch.desk_lamp_left_switch_3:
+      friendly_name: Desk Lamp Left Switch
+      state: 'off'
+    switch.desk_lamp_right_switch_2:
+      friendly_name: Desk Lamp Right Switch
+      state: 'off'
+    switch.sonoff_s31_lite_zb_switch_2:
+      friendly_name: Desk Underglow Switch
+      state: 'off'
+    switch.den_door_lamp_switch_2:
+      friendly_name: Den Door Lamp Switch
+      state: 'off'
+    switch.sonoff_s31_lite_zb_switch_3:
+      friendly_name: Driving Sim Lamp Switch
       state: 'off'
   metadata:
     light.porch_lights:
@@ -299,6 +329,16 @@
     switch.sonoff_s31_lite_zb_switch:
       entity_only: true
     switch.lumi_lumi_switch_b2naus01_switch_5:
+      entity_only: true
+    switch.desk_lamp_left_switch_3:
+      entity_only: true
+    switch.desk_lamp_right_switch_2:
+      entity_only: true
+    switch.sonoff_s31_lite_zb_switch_2:
+      entity_only: true
+    switch.den_door_lamp_switch_2:
+      entity_only: true
+    switch.sonoff_s31_lite_zb_switch_3:
       entity_only: true
 - id: '1624162353593'
   name: Lights On Living Room
@@ -1537,3 +1577,47 @@
       entity_only: true
     light.porch_lights:
       entity_only: true
+- id: '1666586484637'
+  name: Lights On Den
+  entities:
+    switch.desk_lamp_left_switch_3:
+      friendly_name: Desk Lamp Left Switch
+      state: 'on'
+    switch.desk_lamp_right_switch_2:
+      friendly_name: Desk Lamp Right Switch
+      state: 'on'
+    switch.sonoff_s31_lite_zb_switch_2:
+      friendly_name: Desk Underglow Switch
+      state: 'on'
+    switch.sonoff_s31_lite_zb_switch_3:
+      friendly_name: Driving Sim Lamp Switch
+      state: 'on'
+    switch.den_door_lamp_switch_2:
+      friendly_name: Den Door Lamp Switch
+      state: 'on'
+    switch.den_sofa_lamp_switch_4:
+      friendly_name: Den Sofa Lamp Switch
+      state: 'on'
+  metadata: {}
+- id: '1666586502325'
+  name: Lights Off Den
+  entities:
+    switch.desk_lamp_left_switch_3:
+      friendly_name: Desk Lamp Left Switch
+      state: 'off'
+    switch.desk_lamp_right_switch_2:
+      friendly_name: Desk Lamp Right Switch
+      state: 'off'
+    switch.sonoff_s31_lite_zb_switch_2:
+      friendly_name: Desk Underglow Switch
+      state: 'off'
+    switch.sonoff_s31_lite_zb_switch_3:
+      friendly_name: Driving Sim Lamp Switch
+      state: 'off'
+    switch.den_door_lamp_switch_2:
+      friendly_name: Den Door Lamp Switch
+      state: 'off'
+    switch.den_sofa_lamp_switch_4:
+      friendly_name: Den Sofa Lamp Switch
+      state: 'off'
+  metadata: {}
